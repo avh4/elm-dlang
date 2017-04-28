@@ -8,7 +8,7 @@
 mkDerivation {
   pname = "elm-compiler";
   version = "0.18";
-  src = Elm-Platform/0.18/elm-compiler;
+  src = ./elm-compiler;
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
