@@ -6,7 +6,7 @@
 mkDerivation {
   pname = "elm-make";
   version = "0.18";
-  src = Elm-Platform/0.18/elm-make;
+  src = ./elm-make;
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
