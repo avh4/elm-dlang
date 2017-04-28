@@ -1,19 +1,13 @@
-{ mkDerivation, base, cabal-install, stdenv }:
-mkDerivation {
-  pname = "project0";
-  version = "1.0.0";
-  src = ./.;
-  isLibrary = false;
-  isExecutable = true;
-  executableHaskellDepends = [ base ];
-  #buildTools = [ cabal-install ];
-  license = stdenv.lib.licenses.bsd3;
+{ stdenv, elm-d-make, dmd }:
+stdenv.mkDerivation {
+  name = "elm-d";
+  buildInputs = [ elm-d-make dmd ];
 }
 # { mkDerivation ? (import <nixpkgs> {}).mkDerivation, haskellPackages ? (import <nixpkgs> {}).haskellPackages }:
 # let
 #   inherit (haskellPackages) Cabal_1_24_2_0
 #     text mtl transformers; # Haskell dependencies here
-# 
+#
 # in mkDerivation (self: {
 #   pname = "project-name";
 #   version = "1.0.0";

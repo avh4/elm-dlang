@@ -107,10 +107,15 @@ let
   pkgs = import <nixpkgs> { inherit config; };
 
 in
-  {
+  rec {
     elm-compiler = pkgs.haskell.packages.${compiler}.elm-compiler;
     elm-make = pkgs.haskell.packages.${compiler}.elm-make;
     elm-package = pkgs.haskell.packages.${compiler}.elm-package;
+    elm-d = import ./default.nix {
+      stdenv = pkgs.stdenv;
+      elm-d-make = elm-make;
+      dmd = pkgs.dmd;
+    };
   }
   # pkgs.stdenv.mkDerivation {
   #   name = "elm-dlang";
